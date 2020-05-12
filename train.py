@@ -118,7 +118,7 @@ def train(dataloaders, model, epochs=10, cuda=True):
         # Validation on the test set  
         testloader = dataloaders['test']
         with torch.no_grad():
-            valid_loss, accuracy = validation(model, testloader, criterion)
+            valid_loss, accuracy = validation(model, testloader, criterion, args.gpu)
 
         print("Test Accuracy: {:.4f}".format(accuracy/len(testloader)))
                 
